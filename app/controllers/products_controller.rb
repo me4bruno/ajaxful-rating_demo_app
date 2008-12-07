@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     @product.rate(params[:stars], current_user)
     
     render :update do |page|
-      page.replace_html "ajaxful-rating-product-#{@product.id}", ratings_for(@product.reload)
+      page.replace_html "ajaxful-rating-product-#{@product.id}", ratings_for(@product, :wrap => false)
       page.visual_effect :highlight, "ajaxful-rating-product-#{@product.id}"
     end
   end

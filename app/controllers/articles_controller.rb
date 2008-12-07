@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
     @article.rate(params[:stars], current_user)
     
     render :update do |page|
-      page.replace_html "ajaxful-rating-article-#{@article.id}", ratings_for(@article.reload)
+      page.replace_html "ajaxful-rating-article-#{@article.id}", ratings_for(@article, :wrap => false)
       page.visual_effect :highlight, "ajaxful-rating-article-#{@article.id}"
     end
   end

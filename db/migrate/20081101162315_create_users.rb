@@ -10,10 +10,11 @@ class CreateUsers < ActiveRecord::Migration
       t.column :updated_at,                :datetime
       t.column :remember_token,            :string, :limit => 40
       t.column :remember_token_expires_at, :datetime
-
-
     end
+    
     add_index :users, :login, :unique => true
+    
+    User.create(:login => 'demo', :password => 'demo123', :password_confirmation => 'demo123', :email => 'demo@mail.com')
   end
 
   def self.down
