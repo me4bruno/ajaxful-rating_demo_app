@@ -9,10 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081207001507) do
+ActiveRecord::Schema.define(:version => 20090103065750) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
+    t.decimal  "rating_average",         :default => 0.0
+    t.decimal  "rating_average_content", :default => 0.0
+    t.decimal  "rating_average_grammar", :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20081207001507) do
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.integer  "stars"
+    t.string   "dimension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
