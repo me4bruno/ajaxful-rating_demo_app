@@ -1,0 +1,14 @@
+This is a functional example for the plugin Ajaxful Rating:
+
+  http://github.com/edgarjs/ajaxful-rating
+
+To run the app (each line is a single command):
+
+  git clone git@github.com:edgarjs/ajaxful-rating_demo_app.git
+  cd ajaxful-rating_demo_app
+  git submodule init
+  git submodule update
+  rake db:migrate
+  script/server
+
+And that's all.
